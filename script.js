@@ -25,6 +25,9 @@ var dead = setInterval(function(){
 
 function jump(){
 
+    scrollElement.style.display = 'none';
+    gameElement.style.display = 'block';
+    
     if(!final){return;}
 
     var walking = 'url("img/capiCaminando.gif")';
@@ -46,12 +49,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var gameElement = document.getElementById('game');
 
 
-    // Listen for the end of the scroll animation
     scrollElement.addEventListener('animationend', function () {
-        // Hide the scroll element
+
         scrollElement.style.display = 'none';
 
-        // Show the game element
         gameElement.style.display = 'block';
 
     });
