@@ -1,0 +1,116 @@
+body{
+    overflow: hidden;
+}
+
+#text{
+    background: rgb(20, 20, 20);
+    overflow: hidden;
+    font-family: 'Nanum Gothic', sans-serif;
+    position: relative;
+}
+
+#start{
+    display: flex;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    perspective: 450px;
+}
+
+.scroll{
+    color:#ffc909;
+    font-size: 4vw;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: justify;
+    position: relative;
+    animation: scroll 60s linear forwards;
+}
+
+#start h1 p{
+    text-align: center;
+}
+
+@keyframes scroll{
+    from {top: 0; transform: translateZ(0) rotateX(20deg);}
+    to {top: -7500px; transform: translateZ(-2500px) rotateX(21deg);}
+}
+
+
+/* juego capi */
+
+#game{
+    margin-left: 1vh;
+    margin-top: 1vh;
+    width: 220vh;
+    height: 97vh;
+    border: 2px solid black;
+
+    background-image: url('img/fondo.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#capibara{
+    width: 500px;
+    height: 250px;
+    background-image: url('img/capiCaminando.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative;
+    top: 250px;
+    left: -80px;
+}
+
+.animate{
+    animation: jumpCapi 1.2s infinite linear;
+}
+
+#object{
+    width: 130px;
+    height: 140px;
+    background-image: url('img/Objeto1.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative;
+    top: 90px;
+    left: 1250px;
+    animation: object 3.5s infinite linear; 
+}
+
+@keyframes jumpCapi {
+    0% {top: 250px;}
+    30% {top: 90px;}
+    70% {top: 90px;}
+    100% {top: 250px;}
+}
+
+@keyframes object {
+    0% {left: 1250px;}
+    100% {left: -120px;}
+}
+
+#message{
+    position: relative;
+    width: 500px;
+    height: 200px;
+    top: -100px;
+    left: 500px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(244, 163, 110);
+    background-color: rgb(0, 0, 0, 0.5);
+    display: none;
+}
+
+#message p{
+    margin-left: 10%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}
