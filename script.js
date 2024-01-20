@@ -1,8 +1,10 @@
-
 var capibara = document.getElementById('capibara');
 var object = document.getElementById('object');
 var message = document.getElementById('message');
 var final = true;
+
+var gameElement = document.getElementById('game');
+var scrollElement = document.getElementById('text');
 
 var dead = setInterval(function(){
     var capibaraTop = parseInt(window.getComputedStyle(capibara).getPropertyValue('top'));
@@ -25,9 +27,11 @@ var dead = setInterval(function(){
 
 function jump(){
 
+
+
     scrollElement.style.display = 'none';
     gameElement.style.display = 'block';
-    
+
     if(!final){return;}
 
     var walking = 'url("img/capiCaminando.gif")';
@@ -45,18 +49,17 @@ function jump(){
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var scrollElement = document.querySelector('.scroll');
-    var gameElement = document.getElementById('game');
 
 
+    // Listen for the end of the scroll animation
     scrollElement.addEventListener('animationend', function () {
 
         scrollElement.style.display = 'none';
-
         gameElement.style.display = 'block';
 
     });
 });
+
 
 
 
